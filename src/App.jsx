@@ -18,7 +18,10 @@ function App() {
     //     const phone = document.getElementById("phone").value;
     //     const email = document.getElementById("email").value;
     //     const city = document.getElementById("city").value;
-    // ואז היינו מוסיפים לכל אינפוט id ולא היה צריך לעדכן את הסטטיט.
+    // ואז היינו מוסיפים לכל אינפוט id ולא היה צריך לעדכן את הסטייט.
+
+    // הערה חשובה:
+    // אם אני אעשה בדרך שהצעת את התרגיל מבלי להשתמש בסטייט זה אומר שאני לא אוכל לעדכן את הערכים בתוך האינפוטים
 
     // הפונקציה שטטפל בהצגת השגיאות:
     const handleSubmit = () => {
@@ -29,6 +32,8 @@ function App() {
         if (!username) { // כלומר: if username = "" (false)
             alert("Enter a username.");
             return; // כדי שהקוד לא ימשיך לרוץ אם הערך הזה לא הוכנס
+            // בכללי אסור לעשות ריטרן בתוך קומפוננטה פונקציה אלא אם הוא ריק רק כדי לשבור את הלואה או התנאי ולצאת מהפונקציה!
+            // אם היינו עושים פה return (....) ומנסים להחזיר משהו - ריאקט הייתה מתעלמת מזה כי ריאקט מציירת/מפעילה רק מה שחוזר מהריטרן של הקומפוננטה עצמה.
         }
         if (!firstName) {
             alert("Enter a first name.");
